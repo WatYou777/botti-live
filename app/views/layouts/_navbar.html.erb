@@ -7,10 +7,26 @@
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav">
-        <% if logged_in? %>
-          <li class="nav-item"><%= link_to 'お気に入り', likes_user_path(current_user), class: 'nav-link' %></li>
+        
+          <form class="navbar-form" role="search">
+             <input type="text" class="search-form" placeholder="イベント検索">
+             <button type="submit" class="btn btn-default search-icon">
+               <i class="fas fa-search"></i>
+             </button>
+          </form>
+          <% if logged_in? %>
+          <li class="nav-item">
+            <a class="nav-link" href="">
+              <i class="far fa-plus-square event-icon" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= likes_user_path(current_user) %>">
+              <i class="fa fa-heart favorite-icon" aria-hidden="true"></i>
+            </a>
+          </li>
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
+            <a href="#" class="nav-link dropdown-toggle name" data-toggle="dropdown"><%= current_user.name %></a>
             <ul class="dropdown-menu dropdown-menu-right">
               
               <li class="dropdown-item"><%= link_to 'プロフィール', user_path(current_user) %></li>
@@ -19,9 +35,16 @@
             </ul>
           </li>
         <% else %>
-          
-          <li class="nav-item"><%= link_to '新規登録', signup_path, class: 'nav-link' %></li>
-          <li class="nav-item"><%= link_to 'ログイン', login_path, class: 'nav-link' %></li>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= signup_path %>">
+              <i class="new-btn" aria-hidden="true">新規登録</i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= login_path %>">
+              <i class="login-btn" aria-hidden="true">ログイン</i>
+            </a>
+          </li>
         <% end %>
       </ul>
     </div>

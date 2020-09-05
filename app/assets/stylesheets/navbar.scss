@@ -1,0 +1,56 @@
+.search-form{
+  margin: 5px 0 5px 0;
+}
+
+.search-icon {
+  margin: 0 15px 5px 0;
+  padding: 2px 2px;
+  width: 30px;
+  height: 30px;
+  background-color: white; 
+}  
+
+.event-icon {
+  font-size: 23px;
+  color: #DDDDDD;
+}
+
+.event-icon:hover {
+  color: white;
+}
+
+.favorite-icon {
+  font-size: 20px;
+  color: #DDDDDD;
+}
+
+.favorite-icon:hover {
+  color: white; 
+}
+
+.name {
+  font-size: 17px;
+  color: #DDDDDD;
+  font-weight:bold
+}
+
+.name:hover {
+  color: white;
+  font-weight:bold
+}
+
+.new-btn {
+  color: #DDDDDD;
+}
+
+.new-btn:hover {
+  color: white;
+}
+
+.login-btn {
+  color: #DDDDDD;
+}
+
+.login-btn:hover {
+  color: white;
+}
