@@ -7,15 +7,15 @@
 
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav">
-        <form class="navbar-form" action="/" role="search">
+          <% if logged_in? %>
+          <form class="navbar-form" action="/" role="search">
           <%= form_tag root_path, :method => 'get' do %>
             <%= text_field_tag :search, params[:search], class:"search-form", placeholder:"ライブ検索"%>
             <%= button_tag :type => "submit",:name => nil ,:class =>"btn btn-default search-icon" do %>
               <i class="fas fa-search"></i>       
             <% end %> 
           <% end %>
-        </form>          
-          <% if logged_in? %>
+          </form> 
           <li class="nav-item">
             <a class="nav-link" href="<%= new_micropost_path(current_user) %>">
               <i class="far fa-plus-square live-icon" aria-hidden="true"></i>
