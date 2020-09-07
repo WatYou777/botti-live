@@ -13,7 +13,7 @@
          <div class="btn-group"> 
           <%= render 'favorites/favorite_button' , micropost: micropost %>
           <% if current_user == micropost.user %>
-            <%= link_to "イベント削除", micropost, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+            <%= link_to "ライブ削除", micropost, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
           <% end %>
          </div>
         </div>
