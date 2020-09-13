@@ -12,6 +12,11 @@
         <div>
          <div class="btn-group"> 
           <%= render 'favorites/favorite_button' , micropost: micropost %>
+          
+          <a class="nav-link share-btn" href="http://twitter.com/share?url=<%= request.url %>&text=「福岡ぼっちLIVE」で一緒にライブに行ってくださる方募集してます！一人でライブに行く予定の方いらっしゃいませんか？&hashtags=福岡ぼっちLIVE &hashtags=ぼっち参戦" target="_blank_" rel="nofollow">
+            <i class="fab fa-twitter" ></i>
+          </a>
+          
           <% if current_user == micropost.user %>
             <%= link_to "ライブ削除", micropost, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
           <% end %>
