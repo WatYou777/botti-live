@@ -10,7 +10,7 @@
           <% if logged_in? %>
           <form class="navbar-form" action="/" role="search">
           <%= form_tag root_path, :method => 'get' do %>
-            <%= text_field_tag :search, params[:search], class:"search-form", placeholder:"ライブ検索"%>
+            <%= text_field_tag :search, params[:search], class:"search-form", placeholder:"アーティスト検索"%>
             <%= button_tag :type => "submit",:name => nil ,:class =>"btn btn-default search-icon" do %>
               <i class="fas fa-search"></i>       
             <% end %> 

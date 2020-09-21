@@ -1,7 +1,8 @@
 class Micropost < ApplicationRecord
   belongs_to :user
   
-  validates :content, presence: true, length: { maximum: 255 }
+  validates :content, presence: true, length: { maximum: 50}
+  validates :liveplace, presence: true, length: { maximum: 50}
   
   has_many :reverses_of_favorite, class_name: 'Favorite', foreign_key: 'micropost_id' , dependent: :destroy
   has_many :favoriters, through: :reverses_of_favorite, source: :user

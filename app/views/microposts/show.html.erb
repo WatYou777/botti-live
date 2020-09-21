@@ -1,5 +1,5 @@
 <ul class="list-unstyled">
-  <% microposts.each do |micropost| %>
+  <% @microposts.each do |micropost| %>
     <li class="media mb-3">
       <img class="mr-2 rounded" src="<%= gravatar_url(micropost.user, { size: 50 }) %>" alt="">
       <div class="media-body">
@@ -7,7 +7,7 @@
           <%= link_to micropost.user.name, user_path(micropost.user) %> <span class="text-muted">作成日<%= micropost.created_at.strftime("%Y年%-m月%-d日 %-H時%-M分") %></span>
         </div>
         <div>
-          <a class="live-detail">
+          <a class="live-detail" href="/">
           <h4 class="mb-0"><%= micropost.content %></h4>
           <p class="mb-0">日時 <%= micropost.livedatetime.strftime("%Y年%-m月%-d日 %-H時%-M分") %></p>
           <p class="mb-0">会場 <%= micropost.liveplace %></p>
@@ -29,5 +29,5 @@
       </div>
     </li>
   <% end %>
-  <%= paginate microposts %>
+  <%= paginate @microposts %>
 </ul>
